@@ -1,0 +1,8 @@
+name: ObliterateJoin
+main: net.loadingchunks.plugins.ObliterateJoin.ObliterateJoin
+version: 0.1
+
+commands:
+   oj:
+      description: Reloads OJ.
+      usage: /<command> reload 
