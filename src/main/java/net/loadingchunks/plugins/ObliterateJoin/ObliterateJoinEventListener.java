@@ -17,6 +17,8 @@ package net.loadingchunks.plugins.ObliterateJoin;
     along with {ObliterateJoin}.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -29,11 +31,13 @@ public class ObliterateJoinEventListener implements Listener {
 		this.plugin = plugin;
 	}
 
+	@EventHandler (priority = EventPriority.HIGHEST)
 	public void onJoin(PlayerJoinEvent e) {
 		if(plugin.getConfig().getBoolean("disable.join"))
 			e.setJoinMessage(null);
 	}
 	
+	@EventHandler (priority = EventPriority.HIGHEST)
 	public void onQuit(PlayerQuitEvent e) {
 		if(plugin.getConfig().getBoolean("disable.quit"))
 			e.setQuitMessage(null);
